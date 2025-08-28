@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Frog Clicker 🐸</title>
+</head>
+<body>
+    <h1>Frog Clicker 🐸</h1>
+    <p>Clique no sapo para ganhar pontos!</p>
+
+    <div id="game">
+        <!-- Mensagem de erro -->
+        <div id="mensagem-pontos" style="display: none;">Pontos insuficientes!</div>
+
+        <img id="frog" src="https://png.pngtree.com/png-clipart/20230213/ourmid/pngtree-cute-frog-cartoon-png-image_6599512.png" alt="Sapo fofinho" width="200">
+
+        <h2>Pontos: <span id="score">0</span></h2>
+
+        <h2>Força do clique: <span id="forca-clique">1</span></h2>
+
+        <button id="upgrade">Comprar upgrade</button>
+    </div>
+
+    <!-- Aba lateral de upgrades -->
+    <div id="upgrades" style="display: none;">
+        <h3>Upgrades disponíveis</h3>
+        <ul id="upgrade-list">
+            <!-- Os upgrades vão ser adicionados aqui via JS -->
+        </ul>
+        <button id="close-upgrades">Fechar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
