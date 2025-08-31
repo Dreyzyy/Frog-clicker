@@ -1,19 +1,25 @@
 body {
   font-family: 'Press Start 2P', cursive;
-  text-align: center;
   background-color: #d0f0c0; 
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  font-family: 'Press Start 2P', cursive;
   margin-top: 20px;
   color: #2d572c;
+  text-align: center;
+}
+
+p, h2 {
+  color: #1b4332;
+  text-align: center;
 }
 
 #game {
   margin-top: 40px;
+  margin-right: 300px; /* espaço para a sidebar */
+  text-align: center; /* sapo centralizado */
 }
 
 #frog {
@@ -22,11 +28,7 @@ h1 {
 }
 
 #frog:active {
-  transform: scale(0.9); 
-}
-
-h2 {
-  color: #1b4332;
+  transform: scale(0.9);
 }
 
 button {
@@ -35,7 +37,6 @@ button {
   border: none;
   color: white;
   padding: 10px 20px;
-  margin-top: 20px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
@@ -50,48 +51,72 @@ button:hover {
 #upgrade-list {
   list-style-type: none; 
   padding-left: 0;       
-  max-width: 400px;
-  margin: 0 auto; 
+  margin: 0;
+  width: 100%; /* ocupa toda a largura da sidebar */
 }
 
 #upgrade-list li {
-  display: flex;             
-  justify-content: space-between; 
-  align-items: center;      
+  display: flex;
+  align-items: center;
+  width: 100%; /* cada item ocupa toda a largura */
   background-color: #b7e4c7;
   margin-bottom: 10px;
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box; /* evita estourar a largura */
 }
 
+#upgrade-list li span {
+  flex: 1;                  /* ocupa todo o espaço disponível para o texto */
+  min-width: 0;             /* evita que o botão seja empurrado */
+  white-space: normal;      /* permite quebra de linha natural */
+  overflow: visible;        /* mostra o texto completo */
+  font-size: 13px;          /* diminui um pouco a fonte */
+}
 
 #upgrade-list li button {
-   margin-top: -3px;
-  background-color: #40916c;
-  border: none;
-  color: white;
-  padding: 15px 20px;
+  flex-shrink: 0;           /* botão não encolhe */
+  margin-left: 10px;        /* distância do texto */
+  margin-top: 25px;         /* altura do botao*/
+  padding: 10px 10px;       /* botão maior na altura */
   font-size: 14px;
   border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-#upgrade-list li button:hover {
-  background-color: #2d6a4f;
-}
 
+/* Mensagem de pontos */
 #mensagem-pontos {
-    position: relative;       
-    top: 50%;                 
-    left: 50%;                
-    transform: translate(-50%, -50%);  
-    color: red;               
-    font-size: 20px;
-    font-weight: bold;
-    display: none;            
-    opacity: 0;               
-    transition: opacity 0.5s ease; /* suaviza o aparecimento/desaparecimento */
-    z-index: 100;             
+  position: relative;       
+  top: 50%;                 
+  left: 50%;                
+  transform: translate(-50%, -50%);  
+  color: red;               
+  font-size: 20px;
+  font-weight: bold;
+  display: none;            
+  opacity: 0;               
+  transition: opacity 0.5s ease;
+  z-index: 100;             
+}
+
+/* Sidebar dos upgrades */
+#upgrades {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: #222;
+  color: #1b4332;
+  padding: 10px;
+  overflow-y: auto;
+  border-left: 3px solid #4caf50;
+  text-align: left;
+  box-sizing: border-box; /* garante layout certinho */
+}
+
+#upgrades h3 {
+  margin-top: 0;
+  color: #90ee90;
 }
