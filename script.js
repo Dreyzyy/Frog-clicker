@@ -36,22 +36,25 @@ function clique() {
         const listaComValores = { //Alterar valores dos upgrades
             'Mosca ingerida' : 25, //+1 feito
             'Lavou o pé' : 500, //+5 feito
-            'Pulou em uma vitória-régia' : 2500, //+25 feito
-            'Te beijaram mas nada aconteceu' :  5000, //+50 feito
-            'O egito é lindo...' : 10000, //+200 feito
-            'O tal do kermit' : 20000, //+500 feito
-            'Tiana passou por você' : 500000, //+2000k feito
-            'Parabéns! Seu sapo evoluiu para um Frogadier' : 1000000, // 1M -> +5000k feito
-            'Pepe está em live' : 10000000, // 10M -> +25000k feito
-            'Crazy fog quase te atropela!' : 50000000, // 50M -> 100k
-            'Plus ultra! rewbt!': 200000000, // 200M -> 500k
-            'Sapo-cururu...' : 500000000, // 500M -> 5M
+            'Pulou em uma vitória-régia' : 2_500, //+25 feito
+            'Te beijaram mas nada aconteceu' :  5_000, //+50 feito
+            'O egito é lindo...' : 10_000, //+200 feito
+            'O tal do kermit' : 20_000, //+500 feito
+            'Tiana passou por você' : 500_000, //+2000k feito
+            'Parabéns! Seu sapo evoluiu para um Frogadier' : 1_000_000, // 1M -> +5k feito
+            'Pepe está em live' : 10_000_000, // 10M -> +25k feito
+            'Crazy fog quase te atropela!' : 50_000_000, // 50M -> 100k
+            'Plus ultra! rewbt!': 200_000_000, // 200M -> 500k
+            'Sapo-cururu...' : 500_000_000, // 500M -> 5M
             'Seu mestre Yokozuna chegou para te ajudar' : 1_000_000_000 // 1B -> 25M
         }
-        const numeroDosValores = [1, 5, 25, 50, 200, 500, 2000, 5000, 25000, 100000, 500000, 5000000, 25000000]; //Alterar força do clique
+        const numeroDosValores = [1, 5, 25, 50, 200, 500, 2_000, 5_000, 25_000, 100_000, 500_000, 5_000_000, 25_000_000]; //Alterar força do clique
 
         const itemUm = document.createElement('li');
-        itemUm.textContent = `Mosca ingerida - Custa ${listaComValores['Mosca ingerida']} pontos`;
+        const textoUm = document.createElement('span');
+        textoUm.textContent = `Mosca ingerida - Custa ${listaComValores['Mosca ingerida']} pontos`;
+        itemUm.appendChild(textoUm);
+
         const botaoUm = document.createElement('button');
         botaoUm.textContent = 'comprar'
         itemUm.appendChild(botaoUm);
@@ -75,7 +78,10 @@ function clique() {
 
 
         const itemDois = document.createElement('li');
-        itemDois.textContent = `Lavou o pé - Custa ${listaComValores['Lavou o pé']} pontos`;
+        const textoDois = document.createElement('span');
+        textoDois.textContent = `Lavou o pé - Custa ${listaComValores['Lavou o pé']} pontos`;
+        itemDois.appendChild(textoDois);
+
         const botaoDois = document.createElement('button');
         botaoDois.textContent = 'comprar'
         itemDois.appendChild(botaoDois);
@@ -98,7 +104,10 @@ function clique() {
         })
 
         const itemTres = document.createElement('li');
-        itemTres.textContent = `Pulou em uma vitória-régia - Custa ${listaComValores['Pulou em uma vitória-régia']} pontos`;
+        const textoTres = document.createElement('span');
+        textoTres.textContent = `Pulou em uma vitória-régia - Custa ${siglasNumeros(listaComValores['Pulou em uma vitória-régia'])} pontos`;
+        itemTres.appendChild(textoTres);
+
         const botaoTres = document.createElement('button');
         botaoTres.textContent = 'comprar';
         itemTres.appendChild(botaoTres);
@@ -121,7 +130,10 @@ function clique() {
         })
 
         const itemQuatro = document.createElement('li');
-        itemQuatro.textContent = `Te beijaram mas nada aconteceu - Custa ${listaComValores['Te beijaram mas nada aconteceu']} pontos`;
+        const textoQuatro = document.createElement('span');
+        textoQuatro.textContent = `Te beijaram mas nada aconteceu - Custa ${siglasNumeros(listaComValores['Te beijaram mas nada aconteceu'])} pontos`;
+        itemQuatro.appendChild(textoQuatro);
+        
         const botaoQuatro = document.createElement('button');
         botaoQuatro.textContent = 'comprar';
         itemQuatro.appendChild(botaoQuatro);
@@ -144,7 +156,7 @@ function clique() {
         })
 
         const itemCinco = document.createElement('li');
-        itemCinco.textContent = `O egito é lindo... - Custa ${listaComValores['O egito é lindo...']} pontos`;
+        itemCinco.textContent = `O egito é lindo... - Custa ${siglasNumeros(listaComValores['O egito é lindo...'])} pontos`;
         const botaoCinco = document.createElement('button');
         botaoCinco.textContent = 'comprar'
         itemCinco.appendChild(botaoCinco);
@@ -167,7 +179,7 @@ function clique() {
         })
 
         const itemSeis = document.createElement('li');
-        itemSeis.textContent = `kermit? - Custa ${listaComValores['O tal do kermit']} pontos`;
+        itemSeis.textContent = `kermit? - Custa ${siglasNumeros(listaComValores['O tal do kermit'])} pontos`;
         const botaoSeis = document.createElement('button');
         botaoSeis.textContent = 'Comprar';
         itemSeis.appendChild(botaoSeis);
@@ -189,7 +201,7 @@ function clique() {
             }
         })
         const itemSete = document.createElement('li');
-        itemSete.textContent = `Tiana passou por você - Custa ${listaComValores['Tiana passou por você']} pontos`;
+        itemSete.textContent = `Tiana passou por você - Custa ${siglasNumeros(listaComValores['Tiana passou por você'])} pontos`;
         const botaoSete = document.createElement('button');
         botaoSete.textContent = 'Comprar';
         itemSete.appendChild(botaoSete);
@@ -212,7 +224,7 @@ function clique() {
         })
 
         const itemOito = document.createElement('li');
-        itemOito.textContent = `Parabéns! Seu sapo evoluiu para um Frogadier - Custa ${listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier']} pontos`;
+        itemOito.textContent = `Parabéns! Seu sapo evoluiu para um Frogadier - Custa ${siglasNumeros(listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier'])} pontos`;
         const botaoOito = document.createElement('button');
         botaoOito.textContent = 'Comprar';
 
@@ -220,7 +232,7 @@ function clique() {
         listaUpgrades.appendChild(itemOito);
 
         botaoOito.addEventListener('click', () => {
-            if(pontos >= listaComValores['Parabéns! Seu sapo evoluiu para um Frogradier']) {
+            if(pontos >= listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier']) {
                 pontos = pontos - listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier'];
                 pontosPorClique = pontosPorClique + numeroDosValores[7];
                 mudarTextoDaTela();
@@ -236,7 +248,7 @@ function clique() {
         })
 
         const itemNove = document.createElement('li');
-        itemNove.textContent = `Pepe está em live - Custa ${listaComValores['Pepe está em live']} pontos`;
+        itemNove.textContent = `Pepe está em live - Custa ${siglasNumeros(listaComValores['Pepe está em live'])} pontos`;
         const botaoNove = document.createElement('button');
         botaoNove.textContent = 'Comprar';
         itemNove.appendChild(botaoNove);
@@ -259,7 +271,7 @@ function clique() {
         })
 
         const itemDez = document.createElement('li');
-        itemDez.textContent = `Crazy fog quase te atropela! - Custa ${listaComValores['Crazy fog quase te atropela!']} pontos`;
+        itemDez.textContent = `Crazy fog quase te atropela! - Custa ${siglasNumeros(listaComValores['Crazy fog quase te atropela!'])} pontos`;
         const botaoDez = document.createElement('button');
         botaoDez.textContent = 'Comprar';
         itemDez.appendChild(botaoDez);
@@ -282,7 +294,7 @@ function clique() {
         })
 
         const itemOnze = document.createElement('li');
-        itemOnze.textContent = `Plus ultra! rewbt! - Custa ${listaComValores['Plus ultra! rewbt!']} pontos`;
+        itemOnze.textContent = `Plus ultra! rewbt! - Custa ${siglasNumeros(listaComValores['Plus ultra! rewbt!'])} pontos`;
         const botaoOnze = document.createElement('button');
         botaoOnze.textContent = 'Comprar';
         itemOnze.appendChild(botaoOnze);
@@ -305,7 +317,7 @@ function clique() {
         })
 
         const itemDoze = document.createElement('li');
-        itemDoze.textContent = `Sapo-cururu... - Custa ${listaComValores['Sapo-cururu...']} pontos`;
+        itemDoze.textContent = `Sapo-cururu... - Custa ${siglasNumeros(listaComValores['Sapo-cururu...'])} pontos`;
         const botaoDoze = document.createElement('button');
         botaoDoze.textContent = 'Comprar';
         itemDoze.appendChild(botaoDoze);
@@ -328,7 +340,7 @@ function clique() {
         })
 
         const itemTreze = document.createElement('li');
-        itemTreze.textContent = `Seu mestre Yokozuna chegou para te ajudar - Custa ${listaComValores['Seu mestre Yokozuna chegou para te ajudar']} pontos`;
+        itemTreze.textContent = `Seu mestre Yokozuna chegou para te ajudar - Custa ${siglasNumeros(listaComValores['Seu mestre Yokozuna chegou para te ajudar'])} pontos`;
         const botaoTreze = document.createElement('button');
         botaoTreze.textContent = 'Comprar';
         itemTreze.appendChild(botaoTreze);
@@ -346,12 +358,13 @@ function clique() {
                 setTimeout(() => {
                     pontosInsuficientes.style.display = 'none';
                     pontosInsuficientes.style.opacity = '0'
-                }, 2000); 
+            }, 2000); 
             }
         })
     }
 
     function forcaDoClique() {
+        siglasNumeros();
         let mudarClique = document.getElementById('forca-clique');
         mudarClique.innerHTML = pontosPorClique;
     }
