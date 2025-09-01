@@ -88,8 +88,8 @@ button:hover {
 
 /* Mensagem de pontos */
 #mensagem-pontos {
-  position: relative;       
-  top: 50%;                 
+  position: absolute;       
+  top: 130px;                 
   left: 50%;                
   transform: translate(-50%, -50%);  
   color: red;               
