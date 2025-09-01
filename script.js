@@ -1,6 +1,7 @@
 let pontos = 0;
 let pontosPorClique = 1;
 
+siglasNumeros();
 clique();
 abrirUpgrades(); //Loja
 fecharUpgrades(); //Fecha loja
@@ -8,12 +9,12 @@ upgrades(); //Upgrades ativos
 
 function mudarTextoDaTela() {
         let registroDePontos = document.getElementById('score');
-        registroDePontos.innerHTML = pontos;
+        registroDePontos.innerHTML = siglasNumeros(pontos);
     }
 
 function clique() {
     const imagem = document.getElementById('frog');
-    imagem.addEventListener('click', () => {pontos = pontos + pontosPorClique; mudarTextoDaTela('score')}) 
+    imagem.addEventListener('click', () => {pontos = pontos + pontosPorClique; mudarTextoDaTela()}) 
     }
 
     function abrirUpgrades() {
@@ -34,19 +35,19 @@ function clique() {
         const pontosInsuficientes = document.getElementById('mensagem-pontos');
         const listaUpgrades = document.getElementById('upgrade-list');
         const listaComValores = { //Alterar valores dos upgrades
-            'Mosca ingerida' : 25, //+1 feito
-            'Lavou o pé' : 500, //+5 feito
-            'Pulou em uma vitória-régia' : 2_500, //+25 feito
-            'Te beijaram mas nada aconteceu' :  5_000, //+50 feito
-            'O egito é lindo...' : 10_000, //+200 feito
-            'O tal do kermit' : 20_000, //+500 feito
-            'Tiana passou por você' : 500_000, //+2000k feito
-            'Parabéns! Seu sapo evoluiu para um Frogadier' : 1_000_000, // 1M -> +5k feito
-            'Pepe está em live' : 10_000_000, // 10M -> +25k feito
-            'Crazy fog quase te atropela!' : 50_000_000, // 50M -> 100k
-            'Plus ultra! rewbt!': 200_000_000, // 200M -> 500k
-            'Sapo-cururu...' : 500_000_000, // 500M -> 5M
-            'Seu mestre Yokozuna chegou para te ajudar' : 1_000_000_000 // 1B -> 25M
+            'Mosca ingerida' : 50, //+1 feito
+            'Lavou o pé' : 250, //+5 feito
+            'Pulou em uma vitória-régia' : 1_200, //+25 feito
+            'Te beijaram sapinho' :  6_000, //+50 feito
+            'O egito é lindo!' : 15_000, //+200 feito
+            'O tal do kermit' : 40_000, //+500 feito
+            'Tiana passou por você' : 600_000, //+2000k feito
+            'Parabéns! Seu sapo evoluiu para um Froakie' : 1_500_000, // 1M -> +5k feito
+            'Pepe está em live' : 12_000_000, // 10M -> +25k feito
+            'Crazy fog quase te atropela!' : 60_000_000, // 50M -> 100k
+            'Plus ultra! rewbt!': 250_000_000, // 200M -> 500k
+            'Sapo-cururu...' : 600_000_000, // 500M -> 5M
+            'Seu mestre Yokozuna chegou para te ajudar' : 1_200_000_000 // 1B -> 25M
         }
         const numeroDosValores = [1, 5, 25, 50, 200, 500, 2_000, 5_000, 25_000, 100_000, 500_000, 5_000_000, 25_000_000]; //Alterar força do clique
 
@@ -131,7 +132,7 @@ function clique() {
 
         const itemQuatro = document.createElement('li');
         const textoQuatro = document.createElement('span');
-        textoQuatro.textContent = `Te beijaram mas nada aconteceu - Custa ${siglasNumeros(listaComValores['Te beijaram mas nada aconteceu'])} pontos`;
+        textoQuatro.textContent = `Te beijaram sapinho - Custa ${siglasNumeros(listaComValores['Te beijaram sapinho'])} pontos`;
         itemQuatro.appendChild(textoQuatro);
         
         const botaoQuatro = document.createElement('button');
@@ -140,8 +141,8 @@ function clique() {
         listaUpgrades.appendChild(itemQuatro);
 
         botaoQuatro.addEventListener('click', () => {
-            if(pontos >= listaComValores['Te beijaram mas nada aconteceu']) {
-                pontos = pontos - listaComValores['Te beijaram mas nada aconteceu'];
+            if(pontos >= listaComValores['Te beijaram sapinho']) {
+                pontos = pontos - listaComValores['Te beijaram sapinho'];
                 pontosPorClique = pontosPorClique + numeroDosValores[3];
                 mudarTextoDaTela();
                 forcaDoClique()
@@ -156,15 +157,18 @@ function clique() {
         })
 
         const itemCinco = document.createElement('li');
-        itemCinco.textContent = `O egito é lindo... - Custa ${siglasNumeros(listaComValores['O egito é lindo...'])} pontos`;
+        const textoCinco = document.createElement('span');
+        textoCinco.textContent = `O egito é lindo! - Custa ${siglasNumeros(listaComValores['O egito é lindo!'])} pontos`;
+        itemCinco.appendChild(textoCinco);
+
         const botaoCinco = document.createElement('button');
         botaoCinco.textContent = 'comprar'
         itemCinco.appendChild(botaoCinco);
         listaUpgrades.appendChild(itemCinco);
 
         botaoCinco.addEventListener('click', () => {
-            if(pontos >= listaComValores['O egito é lindo...']) {
-                pontos = pontos - listaComValores['O egito é lindo...'];
+            if(pontos >= listaComValores['O egito é lindo!']) {
+                pontos = pontos - listaComValores['O egito é lindo!'];
                 pontosPorClique = pontosPorClique + numeroDosValores[4];
                 mudarTextoDaTela()
                 forcaDoClique();
@@ -179,7 +183,10 @@ function clique() {
         })
 
         const itemSeis = document.createElement('li');
-        itemSeis.textContent = `kermit? - Custa ${siglasNumeros(listaComValores['O tal do kermit'])} pontos`;
+        const textoSeis = document.createElement('span');
+        textoSeis.textContent = `kermit? - Custa ${siglasNumeros(listaComValores['O tal do kermit'])} pontos`;
+        itemSeis.appendChild(textoSeis);
+
         const botaoSeis = document.createElement('button');
         botaoSeis.textContent = 'Comprar';
         itemSeis.appendChild(botaoSeis);
@@ -201,7 +208,10 @@ function clique() {
             }
         })
         const itemSete = document.createElement('li');
-        itemSete.textContent = `Tiana passou por você - Custa ${siglasNumeros(listaComValores['Tiana passou por você'])} pontos`;
+        const textoSete = document.createElement('span');
+        textoSete.textContent = `Tiana passou por você - Custa ${siglasNumeros(listaComValores['Tiana passou por você'])} pontos`;
+        itemSete.appendChild(textoSete);
+
         const botaoSete = document.createElement('button');
         botaoSete.textContent = 'Comprar';
         itemSete.appendChild(botaoSete);
@@ -224,16 +234,18 @@ function clique() {
         })
 
         const itemOito = document.createElement('li');
-        itemOito.textContent = `Parabéns! Seu sapo evoluiu para um Frogadier - Custa ${siglasNumeros(listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier'])} pontos`;
+        const textoOito = document.createElement('span');
+        textoOito.textContent = `Parabéns! Seu sapo evoluiu para Froakie - Custa ${siglasNumeros(listaComValores['Parabéns! Seu sapo evoluiu para um Froakie'])} pontos`;
+        itemOito.appendChild(textoOito);
+
         const botaoOito = document.createElement('button');
         botaoOito.textContent = 'Comprar';
-
-        itemOito.appendChild(botaoOito);
+    itemOito.appendChild(botaoOito);
         listaUpgrades.appendChild(itemOito);
 
         botaoOito.addEventListener('click', () => {
-            if(pontos >= listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier']) {
-                pontos = pontos - listaComValores['Parabéns! Seu sapo evoluiu para um Frogadier'];
+            if(pontos >= listaComValores['Parabéns! Seu sapo evoluiu para um Froakie']) {
+                pontos = pontos - listaComValores['Parabéns! Seu sapo evoluiu para um Froakie'];
                 pontosPorClique = pontosPorClique + numeroDosValores[7];
                 mudarTextoDaTela();
                 forcaDoClique();
@@ -248,7 +260,10 @@ function clique() {
         })
 
         const itemNove = document.createElement('li');
-        itemNove.textContent = `Pepe está em live - Custa ${siglasNumeros(listaComValores['Pepe está em live'])} pontos`;
+        const textoNove = document.createElement('span');
+        textoNove.textContent = `Pepe está em live - Custa ${siglasNumeros(listaComValores['Pepe está em live'])} pontos`;
+        itemNove.appendChild(textoNove);
+
         const botaoNove = document.createElement('button');
         botaoNove.textContent = 'Comprar';
         itemNove.appendChild(botaoNove);
@@ -271,7 +286,10 @@ function clique() {
         })
 
         const itemDez = document.createElement('li');
-        itemDez.textContent = `Crazy fog quase te atropela! - Custa ${siglasNumeros(listaComValores['Crazy fog quase te atropela!'])} pontos`;
+        const textoDez = document.createElement('span');
+        textoDez.textContent = `Crazy fog quase bate em você! - Custa ${siglasNumeros(listaComValores['Crazy fog quase te atropela!'])} pontos`;
+        itemDez.appendChild(textoDez);
+
         const botaoDez = document.createElement('button');
         botaoDez.textContent = 'Comprar';
         itemDez.appendChild(botaoDez);
@@ -294,7 +312,10 @@ function clique() {
         })
 
         const itemOnze = document.createElement('li');
-        itemOnze.textContent = `Plus ultra! rewbt! - Custa ${siglasNumeros(listaComValores['Plus ultra! rewbt!'])} pontos`;
+        const textoOnze = document.createElement('span');
+        textoOnze.textContent = `Plus ultra! rewbt! - Custa ${siglasNumeros(listaComValores['Plus ultra! rewbt!'])} pontos`;
+        itemOnze.appendChild(textoOnze);
+
         const botaoOnze = document.createElement('button');
         botaoOnze.textContent = 'Comprar';
         itemOnze.appendChild(botaoOnze);
@@ -317,7 +338,10 @@ function clique() {
         })
 
         const itemDoze = document.createElement('li');
-        itemDoze.textContent = `Sapo-cururu... - Custa ${siglasNumeros(listaComValores['Sapo-cururu...'])} pontos`;
+        const textoDoze = document.createElement('span');
+        textoDoze.textContent = `Sapo-cururu... - Custa ${siglasNumeros(listaComValores['Sapo-cururu...'])} pontos`;
+        itemDoze.appendChild(textoDoze);
+
         const botaoDoze = document.createElement('button');
         botaoDoze.textContent = 'Comprar';
         itemDoze.appendChild(botaoDoze);
@@ -340,7 +364,10 @@ function clique() {
         })
 
         const itemTreze = document.createElement('li');
-        itemTreze.textContent = `Seu mestre Yokozuna chegou para te ajudar - Custa ${siglasNumeros(listaComValores['Seu mestre Yokozuna chegou para te ajudar'])} pontos`;
+        const textoTreze = document.createElement('span');
+        textoTreze.textContent = `Seu mestre Yokozuna chegou para te ajudar - Custa ${siglasNumeros(listaComValores['Seu mestre Yokozuna chegou para te ajudar'])} pontos`;
+        itemTreze.appendChild(textoTreze);
+
         const botaoTreze = document.createElement('button');
         botaoTreze.textContent = 'Comprar';
         itemTreze.appendChild(botaoTreze);
@@ -364,7 +391,6 @@ function clique() {
     }
 
     function forcaDoClique() {
-        siglasNumeros();
         let mudarClique = document.getElementById('forca-clique');
-        mudarClique.innerHTML = pontosPorClique;
+        mudarClique.innerHTML = siglasNumeros(pontosPorClique);
     }

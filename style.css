@@ -18,8 +18,10 @@ p, h2 {
 
 #game {
   margin-top: 40px;
-  margin-right: 300px; /* espaço para a sidebar */
-  text-align: center; /* sapo centralizado */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza sapo e textos */
+  text-align: center;
 }
 
 #frog {
@@ -52,38 +54,37 @@ button:hover {
   list-style-type: none; 
   padding-left: 0;       
   margin: 0;
-  width: 100%; /* ocupa toda a largura da sidebar */
+  width: 100%;
 }
 
 #upgrade-list li {
   display: flex;
   align-items: center;
-  width: 100%; /* cada item ocupa toda a largura */
+  width: 100%;
   background-color: #b7e4c7;
   margin-bottom: 10px;
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  box-sizing: border-box; /* evita estourar a largura */
+  box-sizing: border-box;
 }
 
 #upgrade-list li span {
-  flex: 1;                  /* ocupa todo o espaço disponível para o texto */
-  min-width: 0;             /* evita que o botão seja empurrado */
-  white-space: normal;      /* permite quebra de linha natural */
-  overflow: visible;        /* mostra o texto completo */
-  font-size: 13px;          /* diminui um pouco a fonte */
+  flex: 1;
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+  font-size: 13px;
 }
 
 #upgrade-list li button {
-  flex-shrink: 0;           /* botão não encolhe */
-  margin-left: 10px;        /* distância do texto */
-  margin-top: 25px;         /* altura do botao*/
-  padding: 10px 10px;       /* botão maior na altura */
+  flex-shrink: 0;
+  margin-left: 10px;
+  margin-top: 25px;
+  padding: 10px 10px;
   font-size: 14px;
   border-radius: 6px;
 }
-
 
 /* Mensagem de pontos */
 #mensagem-pontos {
@@ -113,7 +114,7 @@ button:hover {
   overflow-y: auto;
   border-left: 3px solid #4caf50;
   text-align: left;
-  box-sizing: border-box; /* garante layout certinho */
+  box-sizing: border-box;
 }
 
 #upgrades h3 {
