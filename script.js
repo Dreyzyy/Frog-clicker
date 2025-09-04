@@ -72,6 +72,10 @@ function clique() {
             pontosPorClique = pontosPorClique + numeroDosValores[0];
             mudarTextoDaTela();
             forcaDoClique();
+
+            localStorage.setItem("ArmazemDePontos", pontos);
+             localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+        
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -99,6 +103,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[1];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique);
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -125,6 +133,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[2];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -151,6 +163,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[3];
                 mudarTextoDaTela();
                 forcaDoClique()
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -177,6 +193,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[4];
                 mudarTextoDaTela()
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -203,6 +223,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[5];
                 mudarTextoDaTela()
                 forcaDoClique()
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -228,6 +252,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[6];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -254,6 +282,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[7];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -280,6 +312,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[8];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -306,6 +342,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[9];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -332,6 +372,11 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[10];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
+
             } else {
                 pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -358,6 +403,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[11];
                 mudarTextoDaTela();
                 forcaDoClique();
+                
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+
             } else {
                  pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
@@ -384,6 +433,10 @@ function clique() {
                 pontosPorClique = pontosPorClique + numeroDosValores[12];
                 mudarTextoDaTela();
                 forcaDoClique();
+
+                localStorage.setItem("ArmazemDePontos", pontos);
+                localStorage.setItem("ArmazemDeForca", pontosPorClique); 
+                
             } else {
                   pontosInsuficientes.style.display = 'block';
                 pontosInsuficientes.style.opacity = '1'
