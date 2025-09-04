@@ -1,3 +1,4 @@
+/* Corpo e fontes gerais */
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: #d0f0c0; 
@@ -5,26 +6,36 @@ body {
   padding: 0;
 }
 
+/* Título */
 h1 {
   margin-top: 20px;
   color: #2d572c;
   text-align: center;
+  font-size: 24px; /* diminui só o título */
 }
 
+/* Outros textos */
 p, h2 {
+  font-size: 15px;
   color: #1b4332;
   text-align: center;
 }
 
+/* Container do jogo */
 #game {
-  margin-top: 40px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza sapo e textos */
+  align-items: center;
   text-align: center;
+  width: 100%;
 }
 
+/* Sapo */
 #frog {
+  width: 170px; /* sapo menor */
+  height: auto;
+  flex-shrink: 0;
   cursor: pointer;
   transition: transform 0.1s ease;
 }
@@ -33,14 +44,15 @@ p, h2 {
   transform: scale(0.9);
 }
 
+/* Botões */
 button {
   font-family: 'Press Start 2P', cursive;
   background-color: #40916c;
   border: none;
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 15px 25px;
+  font-size: 15px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -48,6 +60,8 @@ button {
 button:hover {
   background-color: #2d6a4f;
 }
+
+
 
 /* Lista de upgrades */
 #upgrade-list {
@@ -120,4 +134,58 @@ button:hover {
 #upgrades h3 {
   margin-top: 0;
   color: #90ee90;
+}
+
+/* Sidebar das conquistas */
+#conquistas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: #222;
+  color: #1b4332;
+  padding: 10px;
+  overflow-y: auto;
+  border-right: 3px solid #f5c518;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#conquistas h3 {
+  margin-top: 0;
+  color: #f5c518;
+}
+
+#lista-conquistas li {
+  background: #b7e4c7;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: opacity 0.3s;
+}
+
+#lista-conquistas li.bloqueada {
+  opacity: 0.4; /* efeito de "desbloqueado" depois */
+}
+
+
+/* Botão reiniciar menor */
+#reiniciar {
+  padding: 5px 10px;       /* menor que os outros botões */
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: #40916c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: 0px;       /* espaçamento do lado do botão de upgrade */
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+#reiniciar:hover {
+  background-color: #2d6a4f;
 }

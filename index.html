@@ -23,6 +23,8 @@
         <h2>Força do clique: <span id="forca-clique">1</span></h2>
 
         <button id="upgrade">Comprar upgrade</button>
+        <button id="reiniciar">Apagar Jogo</button>
+
     </div>
 
     <!-- Aba lateral de upgrades -->
@@ -34,10 +36,20 @@
         <button id="close-upgrades">Fechar</button>
     </div>
 
-    <audio id="musicaDeFundo" src="caminho/da/musica.mp3" loop autoplay></audio>
+    <button id="abrir-conquistas">Ver conquistas</button>
+
+    <!-- Aba lateral de conquistas -->
+<div id="conquistas" style="display: none;">
+    <h3>Conquistas</h3>
+    <ul id="lista-conquistas">
+        <!-- As conquistas vão ser adicionadas aqui via JS -->
+    </ul>
+    <button id="close-conquistas">Fechar</button>
+</div>
 
     <script src="numeros.js"></script>
     <script src="script.js"></script>
+    <script src="conquistas.js"></script>
 </body>
 </html>
 

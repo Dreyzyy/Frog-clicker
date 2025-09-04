@@ -1,11 +1,12 @@
-let pontos = 0;
-let pontosPorClique = 1;
+let pontos = Number(localStorage.getItem("ArmazemDePontos")) || 0;
+let pontosPorClique = Number(localStorage.getItem("ArmazemDeForca")) || 1;
 
 siglasNumeros();
 clique();
 abrirUpgrades(); //Loja
 fecharUpgrades(); //Fecha loja
 upgrades(); //Upgrades ativos
+reiniciar();
 
 function mudarTextoDaTela() {
         let registroDePontos = document.getElementById('score');
@@ -14,7 +15,8 @@ function mudarTextoDaTela() {
 
 function clique() {
     const imagem = document.getElementById('frog');
-    imagem.addEventListener('click', () => {pontos = pontos + pontosPorClique; mudarTextoDaTela()}) 
+    imagem.addEventListener('click', () => {pontos = pontos + pontosPorClique; mudarTextoDaTela()})
+    localStorage.setItem("ArmazemDePontos", pontos);
     }
 
     function abrirUpgrades() {
@@ -393,4 +395,17 @@ function clique() {
     function forcaDoClique() {
         let mudarClique = document.getElementById('forca-clique');
         mudarClique.innerHTML = siglasNumeros(pontosPorClique);
+        localStorage.setItem("ArmazemDeForca", pontosPorClique);
+    }
+
+    function reiniciar() {
+        const reiniciarJogo = document.getElementById('reiniciar');
+        reiniciarJogo.addEventListener('click', () => {
+            pontos = 0;
+            localStorage.setItem("ArmazemDePontos", pontos);
+            pontosPorClique = 1;
+            localStorage.setItem("ArmazemDeForca", pontosPorClique);
+            mudarTextoDaTela();
+            forcaDoClique();
+        })
     }
