@@ -1,12 +1,14 @@
 let pontos = Number(localStorage.getItem("ArmazemDePontos")) || 0;
 let pontosPorClique = Number(localStorage.getItem("ArmazemDeForca")) || 1;
 
-siglasNumeros();
+mudarTextoDaTela();
 clique();
+forcaDoClique();
 abrirUpgrades(); //Loja
 fecharUpgrades(); //Fecha loja
 upgrades(); //Upgrades ativos
 reiniciar();
+siglasNumeros();
 
 function mudarTextoDaTela() {
         let registroDePontos = document.getElementById('score');
@@ -15,8 +17,9 @@ function mudarTextoDaTela() {
 
 function clique() {
     const imagem = document.getElementById('frog');
-    imagem.addEventListener('click', () => {pontos = pontos + pontosPorClique; mudarTextoDaTela()})
-    localStorage.setItem("ArmazemDePontos", pontos);
+    imagem.addEventListener('click', () => {pontos = pontos + pontosPorClique; mudarTextoDaTela()
+        localStorage.setItem("ArmazemDePontos", pontos);
+    })
     }
 
     function abrirUpgrades() {
